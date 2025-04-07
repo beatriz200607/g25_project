@@ -15,7 +15,7 @@ db = 'Order.db'
 
 from classes.order import Order
 test_class = Order
-ob = '1966-03-12;100;600;600'
+ob = '8;1966-03-12;100;600;600'
 
 #from classes.restaurant import Restaurant
 #test_class = Restaurant
