@@ -15,7 +15,7 @@ class Dish(Gclass):
     pos = 0
     sortkey = ''
    
-    att = ['dish_id', '_dish_name', '_category', '_price']
+    att = ['_dish_id', '_dish_name', '_category', '_price']
    
     header = 'Dish'
    
