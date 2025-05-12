@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Delivery Partner</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+<body>
+    <div class="dados">
+        <img src="{{ url_for('static', filename='images/DeliveryPartner.jpg') }}" alt="delivery" width="200" height="200">
+        <h1>Delivery Partner</h1>
+        <br>
+        <button id="edit" type="button" {{butshow}} onclick="window.location.href = '/delivery?option=edit'" class="button1">Edit</button>
+        <button id="delete" type="button" {{butshow}} onclick="window.location.href = '/delivery?option=delete'" class="button1">Delete</button>
+        <button id="insert" type="button" {{butshow}} onclick="window.location.href = '/delivery?option=insert'" class="button1">Insert</button>
+        <button id="save" type="submit" form="form" {{butedit}} class="button1">Save</button>
+        <button id="cancel" type="button" {{butedit}} onclick="window.location.href = '/delivery?option=cancel'" class="button1">Cancel</button>
+        <button id="exit" type="button" {{butshow}} onclick="window.location.href = '/delivery?option=exit'" class="button1">Exit</button>
+        <br><br>
+        <form id="form" action="/delivery?option=save" method="post">
+            <label for="id">Id:</label>
+            <input type="text" {{butedit}} id="id" name="id" value="{{id}}" size="10"/>
+            <br><br>
+            <label for="partner_name">Partner Name:</label>
+            <input type="text" {{butedit}} id="partner_name" name="partner_name" value="{{partner_name}}" size="30"/>
+            <br><br>
+            <label for="rating">Rating:</label>
+            <input type="text" {{butedit}} id="rating" name="rating" value="{{rating}}" size="10"/>
+        </form>
+        <br>
+        <button type="button" {{butshow}} onclick="window.location.href = '/delivery?option=first'" class="button1">First</button>
+        <button type="button" {{butshow}} onclick="window.location.href = '/delivery?option=previous'" class="button1">Previous</button>
+        <button type="button" {{butshow}} onclick="window.location.href = '/delivery?option=next'" class="button1">Next</button>
+        <button type="button" {{butshow}} onclick="window.location.href = '/delivery?option=last'" class="button1">Last</button>
+    </div>
+</body>
+</html>

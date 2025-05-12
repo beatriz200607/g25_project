@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Order</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+<body>
+    <div class="dados">
+        <img src="{{ url_for('static', filename='images/Order.jpg') }}" alt="order" width="200" height="200">
+        <h1>Order</h1>
+        <br>
+        <button id="edit" type="button" {{butshow}} onclick="window.location.href = '/order?option=edit'" class="button1">Edit</button>
+        <button id="delete" type="button" {{butshow}} onclick="window.location.href = '/order?option=delete'" class="button1">Delete</button>
+        <button id="insert" type="button" {{butshow}} onclick="window.location.href = '/order?option=insert'" class="button1">Insert</button>
+        <button id="save" type="submit" form="form" {{butedit}} class="button1">Save</button>
+        <button id="cancel" type="button" {{butedit}} onclick="window.location.href = '/order?option=cancel'" class="button1">Cancel</button>
+        <button id="exit" type="button" {{butshow}} onclick="window.location.href = '/order?option=exit'" class="button1">Exit</button>
+        <br><br>
+        <form id="form" action="/order?option=save" method="post">
+            <label for="id">Order ID:</label>
+            <input type="text" {{butedit}} id="id" name="id" value="{{id}}" size="10"/>
+            <br><br>
+            <label for="order_date">Order Date (YYYY-MM-DD):</label>
+            <input type="text" {{butedit}} id="order_date" name="order_date" value="{{order_date}}" size="15"/>
+            <br><br>
+            <label for="quantity">Quantity:</label>
+            <input type="text" {{butedit}} id="quantity" name="quantity" value="{{quantity}}" size="10"/>
+            <br><br>
+            <label for="partner_id">Partner ID:</label>
+            <input type="text" {{butedit}} id="partner_id" name="partner_id" value="{{partner_id}}" size="10"/>
+            <br><br>
+            <label for="dish_id">Dish ID:</label>
+            <input type="text" {{butedit}} id="dish_id" name="dish_id" value="{{dish_id}}" size="10"/>
+        </form>
+        <br>
+        <button type="button" {{butshow}} onclick="window.location.href = '/order?option=first'" class="button1">First</button>
+        <button type="button" {{butshow}} onclick="window.location.href = '/order?option=previous'" class="button1">Previous</button>
+        <button type="button" {{butshow}} onclick="window.location.href = '/order?option=next'" class="button1">Next</button>
+        <button type="button" {{butshow}} onclick="window.location.href = '/order?option=last'" class="button1">Last</button>
+    </div>
+</body>
+</html>
+
