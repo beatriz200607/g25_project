@@ -1,7 +1,0 @@
-Funcionalidades: 
-Faturamento total por mês: diz a receita total em cada mês
-Top 10 combinações restaurante+prato : diz as dez combinações mais + pedidas da associação prato-restaurante
-Preço médio por categoria de prato
-Quantidade vendida e receita por tipo de cozinha: quantidade vendida de cada tipo de cozinha e receita de cada tipo de cozinha
-Top 10 parceiros de entrega por avaliação: melhores 10 parceiros tendo em conta o rating
-Top 10 restaurantes por receita: melhores 10 restaurantes tendo a conta a receita de cada um
