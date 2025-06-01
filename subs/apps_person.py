@@ -60,5 +60,5 @@ def apps_person():
                         ulogin=session.get("user"))
     else:
         return render_template("index.html", ulogin=ulogin)
-# -*- coding: utf-8 -*-
+
 

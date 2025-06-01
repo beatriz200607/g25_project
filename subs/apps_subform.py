@@ -6,6 +6,7 @@ from classes.dish import Dish
 from classes.restaurant import Restaurant
 from classes.userlogin import Userlogin
 
+
 prev_option = ""
 
 def apps_subform(cname=""):
