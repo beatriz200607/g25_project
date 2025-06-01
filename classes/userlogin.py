@@ -1,3 +1,4 @@
+
 # Class User - generic version
 # import sys
 import bcrypt
@@ -30,27 +31,25 @@ class Userlogin(Gclass):
         Userlogin.obj[id] = self
         # Add the code to the list of object codes
         Userlogin.lst.append(id)
-
     # id property getter method
     @property
     def id(self):
         return self._id
-    # code property getter method
+    # user property getter method
     @property
     def user(self):
         return self._user
-    # name property getter method
+    # usergroup property getter method
     @property
     def usergroup(self):
         return self._usergroup
     @usergroup.setter
     def usergroup(self, usergroup):
         self._usergroup = usergroup
-        
+    # password property
     @property
     def password(self):
         return ""
-    
     @password.setter
     def password(self, password):
         self._password = password
