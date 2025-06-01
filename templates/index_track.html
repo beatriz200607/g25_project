@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block title %}Rastrear Pedido ou Entregador{% endblock %}
+
+{% block content %}
+<h1 class="mb-4">Rastrear Pedido ou Entregador</h1>
+
+<form method="post" action="/track?option=track">
+    <div class="mb-3">
+        <label for="track_type" class="form-label">Tipo:</label>
+        <select id="track_type" name="track_type" class="form-select">
+            <option value="order" {% if track_type == "order" %}selected{% endif %}>Pedido</option>
+            <option value="deliverypartner" {% if track_type == "deliverypartner" %}selected{% endif %}>Entregador</option>
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label for="track_id" class="form-label">ID:</label>
+        <input type="text" id="track_id" name="track_id" class="form-control" value="{{ track_id }}" required>
+    </div>
+
+    <div class="mb-3 d-flex gap-2">
+        <button type="submit" class="btn btn-primary">Rastrear</button>
+        <button type="button" class="btn btn-secondary" onclick="window.location.href='/track?option=exit'">Sair</button>
+    </div>
+</form>
+
+{% if lat and lng %}
+    <h2 class="mt-5">Localização:</h2>
+    <p>Latitude: {{ lat }}</p>
+    <p>Longitude: {{ lng }}</p>
+
+    <div class="ratio ratio-16x9">
+        <iframe
+            src="https://www.google.com/maps?q={{ lat }},{{ lng }}&hl=pt&z=14&output=embed"
+            style="border:0;"
+            allowfullscreen
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </div>
+{% endif %}
+{% endblock %}
+
+
+
